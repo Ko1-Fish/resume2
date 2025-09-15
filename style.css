@@ -219,3 +219,38 @@ p {
         background-position: 0% 50%;
     }
 }
+
+/* -------------------------------------------------------------------------- */
+/* Media Queries                              */
+/* -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .box {
+        padding: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-pic-container {
+        width: 150px;
+        height: 150px;
+    }
+
+    .tagline {
+        font-size: 1.1rem;
+    }
+
+    .bio {
+        font-size: 1rem;
+    }
+}
