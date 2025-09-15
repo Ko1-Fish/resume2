@@ -1,17 +1,23 @@
 :root {
-    --crust: #11111B;
-    --mantle: #181825;
-    --base: #24273A;
+    /* Catppuccin-inspired Base Colors */
+    --crust: #08080c;
+    --mantle: #12121e;
+    --base: #1c1c28;
     --text: #CDD6F4;
     --subtext: #A6ADC8;
+    
+    /* Catppuccin-inspired Accent Colors */
     --mauve: #CBA6F7;
     --pink: #F5C2E7;
-    --surface0: #363A4F;
+    --surface0: #262638;
 }
 
 /* Base Styles */
 body {
-    background-color: var(--crust);
+    /* Updated background properties for a darker wave animation */
+    background: linear-gradient(270deg, var(--crust), var(--mauve), var(--pink), var(--crust));
+    background-size: 600% 600%;
+    animation: waveAnimation 30s ease-in-out infinite;
     color: var(--text);
     font-family: 'Inter', sans-serif;
     margin: 0;
@@ -70,44 +76,6 @@ p {
     padding: 0 1.5rem;
 }
 
-/* Header & Navigation */
-header {
-    background-color: var(--mantle);
-    padding: 1rem 0;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
-
-nav a {
-    color: var(--text);
-    text-decoration: none;
-    margin: 0 1.5rem;
-    font-size: 1.1rem;
-    font-weight: 500;
-    transition: color 0.3s ease, transform 0.3s ease;
-    position: relative;
-    padding-bottom: 5px;
-}
-
-nav a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    background: var(--pink);
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    transition: width 0.3s ease;
-}
-
-nav a:hover::after {
-    width: 100%;
-}
-
 /* Reusable Box Component */
 .box {
     background-color: var(--base);
@@ -121,7 +89,7 @@ nav a:hover::after {
 /* Hover Lift Animation */
 .hover-lift:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    box-shadow: 12px 40px rgba(0, 0, 0, 0.3);
 }
 
 /* Section-specific styling */
@@ -130,6 +98,7 @@ nav a:hover::after {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    margin-top: 3rem;
 }
 
 .hero-content {
@@ -238,4 +207,15 @@ nav a:hover::after {
 /* For removing cursor after typing */
 .typed::after {
     content: none;
+}
+@keyframes waveAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
