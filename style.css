@@ -12,7 +12,7 @@
 body {
     background-color: var(--base);
     color: var(--text);
-    font-family: 'Liberation Mono', monospace;
+    font-family: 'Tahoma', Verdana, sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -156,6 +156,7 @@ p {
     flex-direction: column;
     gap: 1rem;
     margin-top: 1.5rem;
+    align-items: center;
 }
 
 @media (min-width: 600px) {
@@ -268,7 +269,7 @@ footer {
 
 .project-image {
     width: 100%;
-    max-height: 150px;
+    max-height: 200px;
     object-fit: cover;
     border-radius: 5px;
 }
